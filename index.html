@@ -700,6 +700,136 @@
             color: var(--text-gray);
         }
 
+
+        /* EXPERIENCE & EDUCATION (TIMELINE) */
+        .resume-section {
+            padding: 100px 0;
+            background-color: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .resume-column-title {
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .resume-column-title i {
+            color: var(--accent-orange);
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .timeline {
+            position: relative;
+            border-left: 2px solid var(--border-color);
+            padding-left: 25px;
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -32px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-orange);
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 3px rgba(255, 111, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background-color: var(--text-white);
+            box-shadow: 0 0 0 5px var(--accent-orange);
+        }
+
+        .timeline-date {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 13px;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            color: var(--text-white);
+            margin-bottom: 4px;
+        }
+
+        .timeline-subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--text-gray);
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-desc li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .timeline-desc li::before {
+            content: "•";
+            color: var(--accent-orange);
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .contact-info-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 8px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .resume-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
         /* RESPONSIVE STYLES */
         @media (max-width: 1024px) {
             .highlights-grid {
@@ -860,16 +990,18 @@
                 <h1 class="hero-name">FAWAD <br><span>AHMAD KHAN AMIRY</span></h1>
                 <p class="hero-title">Heavy Duty Mechanic</p>
                 <p class="hero-desc">
-                    I work in Canada and I'm ready to be a valuable asset to your company. 
-                    Providing high-quality diagnostic and repair services for heavy-duty machinery, trucks, and equipment.
+                    Motivated mechanic with 2 years of hands-on experience in repairing and maintaining a wide range of vehicles and small machines. Skilled at diagnosing, completing repairs efficiently while maintaining high-quality work.
                 </p>
                 <ul class="hero-bullets">
-                    <li><i class="fa-solid fa-check"></i> 1st year apprenticeship completed</li>
-                    <li><i class="fa-solid fa-check"></i> Hands-on experience</li>
-                    <li><i class="fa-solid fa-check"></i> Reliable, responsible and result-driven</li>
-                    <li><i class="fa-solid fa-check"></i> Always learning, always improving</li>
+                    <li><i class="fa-solid fa-check"></i> SAIT Pre-Apprentice Automotive Heavy Duty Program</li>
+                    <li><i class="fa-solid fa-check"></i> Safety Certifications: First Aid, CPR/AED, CSTS, WHMIS</li>
+                    <li><i class="fa-solid fa-check"></i> Valid Class 4 &amp; 5 Licenses (Clean Driving Abstract)</li>
+                    <li><i class="fa-solid fa-check"></i> Results-Driven, Dependable &amp; Adaptable</li>
                 </ul>
-                <a href="#contact" class="btn">Let's Work Together <i class="fa-solid fa-arrow-right"></i></a>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="#contact" class="btn">Let's Work Together <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="fawad_resume.pdf" download class="btn" style="background-color: transparent; border: 2px solid var(--accent-orange); color: var(--text-white);"><i class="fa-solid fa-download" style="margin-left: 0; margin-right: 8px;"></i> Download Resume</a>
+                </div>
             </div>
             
             <div class="hero-image-wrapper">
@@ -885,7 +1017,7 @@
     </section>
 
     <!-- QUICK HIGHLIGHTS / CARD BAR -->
-    <section class="highlights" id="experience">
+    <section class="highlights" id="highlights">
         <div class="container highlights-grid">
             <div class="highlight-card">
                 <i class="fa-solid fa-screwdriver-wrench highlight-icon"></i>
@@ -924,10 +1056,10 @@
         <div class="container about-grid">
             <div class="about-text">
                 <h2 class="section-title">About Me</h2>
-                <p>My name is Fawad Ahmad Khan Amiry. I'm a Heavy Duty Mechanic based in Canada and passionate about what I do every day.</p>
-                <p>I completed the first year of my apprenticeship and gained valuable knowledge and practical skills in diagnosing, repairing and maintaining heavy duty trucks and equipment.</p>
-                <p>I take pride in doing the job right the first time and always follow safety and quality standards.</p>
-                <p>I'm looking for a company where I can bring value, keep learning and become a strong part of the team.</p>
+                <p>My name is Fawad Ahmad Khan Amiry. I'm a motivated mechanic with 2 years of hands-on experience in repairing and maintaining a wide range of vehicles and small machines.</p>
+                <p>I recently completed the Pre-Apprentice Automotive Heavy Duty Technician Program at SAIT (2026), where I gained extensive practical training in diagnosing, servicing, and repairing electrical circuits, wheel hubs, engines, and heavy-duty equipment.</p>
+                <p>Additionally, I hold safety certifications in First Aid/CPR/AED, CSTS 2020, and WHMIS 2015, and maintain a clean driving abstract with Class 4 and 5 licenses. I also have a strong administrative background with a Diploma in Business Administration and a BA in Economics, which helps me stay highly organized, manage data systems, and interpret technical manuals and work orders precisely.</p>
+                <p>I am dependable, adaptable, work professionally with team members and customers, and am fully committed to getting every job done right.</p>
             </div>
             
             <div class="about-image-wrapper">
@@ -955,31 +1087,31 @@
                 <div class="spec-card">
                     <i class="fa-solid fa-car-battery spec-icon"></i>
                     <h3 class="spec-name">Diagnostics</h3>
-                    <p class="spec-desc">Advanced diagnostics and troubleshooting for engines, electrical and brake systems.</p>
+                    <p class="spec-desc">Troubleshooting, electrical circuit diagnosis, and using precision measuring tools to verify components.</p>
                 </div>
                 
                 <div class="spec-card">
                     <i class="fa-solid fa-wrench spec-icon"></i>
                     <h3 class="spec-name">Repairs</h3>
-                    <p class="spec-desc">Engine, transmission, suspension, steering and drivetrain repairs.</p>
+                    <p class="spec-desc">Engine, suspension, brakes, steering, wheel hubs/wheel ends, and oxy-fuel metal cutting and heating.</p>
                 </div>
                 
                 <div class="spec-card">
                     <i class="fa-solid fa-gears spec-icon"></i>
                     <h3 class="spec-name">Maintenance</h3>
-                    <p class="spec-desc">Scheduled maintenance, oil changes, filters, inspections and preventative care.</p>
+                    <p class="spec-desc">Preventative maintenance, scheduled inspections, tire/wheel servicing, and applying fasteners/gaskets.</p>
                 </div>
                 
                 <div class="spec-card">
-                    <i class="fa-solid fa-circle-check spec-icon"></i>
-                    <h3 class="spec-name">Safety</h3>
-                    <p class="spec-desc">Following safety procedures and ensuring equipment is road-ready and reliable.</p>
+                    <i class="fa-solid fa-file-invoice spec-icon"></i>
+                    <h3 class="spec-name">Work Orders</h3>
+                    <p class="spec-desc">Reading, understanding, and executing work orders and technical manuals precisely as intended.</p>
                 </div>
                 
                 <div class="spec-card">
-                    <i class="fa-solid fa-truck-monster spec-icon"></i>
-                    <h3 class="spec-name">Heavy Equipment</h3>
-                    <p class="spec-desc">Experience working on trucks, trailers and heavy-duty equipment of all sizes.</p>
+                    <i class="fa-solid fa-shield-halved spec-icon"></i>
+                    <h3 class="spec-name">Safety First</h3>
+                    <p class="spec-desc">Adhering to strict lockout/tag-out procedures, WHMIS, and safe shop tool operation.</p>
                 </div>
             </div>
         </div>
@@ -1008,17 +1140,133 @@
         </div>
     </section>
 
+
+    <!-- EXPERIENCE & EDUCATION SECTION -->
+    <section class="resume-section" id="experience">
+        <div class="container">
+            <div class="resume-grid">
+                <!-- Education & Training Column -->
+                <div>
+                    <h3 class="resume-column-title"><i class="fa-solid fa-graduation-cap"></i> Technical Training &amp; Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2026</div>
+                            <h4 class="timeline-title">Pre-Apprentice Automotive Heavy Duty Technician Program</h4>
+                            <div class="timeline-subtitle">SAIT (Southern Alberta Institute of Technology), Calgary, AB</div>
+                            <ul class="timeline-desc">
+                                <li>Practiced safe operation of shop tools, equipment, and maintenance procedures</li>
+                                <li>Used precision measuring tools to inspect and verify mechanical components</li>
+                                <li>Selected and applied appropriate fasteners, gaskets, and sealants for repairs</li>
+                                <li>Performed lockout/tag-out procedures during vehicle maintenance and repair activities</li>
+                                <li>Followed standard shop procedures when servicing cars, trucks, and heavy equipment</li>
+                                <li>Assisted with vehicle and equipment inspections and preventive maintenance procedures</li>
+                                <li>Serviced truck wheel hubs/wheel ends, including wheel and tire maintenance</li>
+                                <li>Repaired basic electrical circuits and components</li>
+                                <li>Safely performed metal cutting and heating operations using oxy-fuel equipment</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2025</div>
+                            <h4 class="timeline-title">Diploma in Business Administration</h4>
+                            <div class="timeline-subtitle">Royal Canadian Business College, Calgary, AB</div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2019</div>
+                            <h4 class="timeline-title">BA in Economics</h4>
+                            <div class="timeline-subtitle">Ghazi Amanullah Khan University, Kabul, Afghanistan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work Experience Column -->
+                <div>
+                    <h3 class="resume-column-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">July 2025 - February 2026</div>
+                            <h4 class="timeline-title">Warehouse Associate</h4>
+                            <div class="timeline-subtitle">DB SCHENKER, Calgary, AB</div>
+                            <ul class="timeline-desc">
+                                <li>Picked, packed, and labelled products accurately to ensure timely and error-free shipments</li>
+                                <li>Loaded, unloaded, and transported inventory safely using warehouse equipment and manual handling techniques</li>
+                                <li>Inspected products for damage or quality issues and reported discrepancies to supervisors</li>
+                                <li>Maintained a clean, organized, and safe warehouse environment in compliance with company safety standards</li>
+                                <li>Assisted with inventory handling and order fulfillment to support daily warehouse operations</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">September 2023 - June 2026</div>
+                            <h4 class="timeline-title">Ride Share Driver</h4>
+                            <div class="timeline-subtitle">Calgary, Canada</div>
+                            <ul class="timeline-desc">
+                                <li>Provided safe and timely transportation to passengers, adhering to all traffic regulations</li>
+                                <li>Maintained a clean and comfortable vehicle environment, ensuring a pleasant ride</li>
+                                <li>Utilized GPS navigation and ride share app to coordinate routes and communicate arrival times</li>
+                                <li>Ensured all licensing, vehicle registration, and insurance documentation was up-to-date</li>
+                            </ul>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">June 2009 - February 2011</div>
+                            <h4 class="timeline-title">Workshop Associate</h4>
+                            <div class="timeline-subtitle">Watan Vehicle Workshop, Kabul, Afghanistan</div>
+                            <ul class="timeline-desc">
+                                <li>Assisted technicians with vehicle maintenance, repair, and inspection tasks</li>
+                                <li>Performed basic mechanical work, including parts replacement, cleaning, and equipment preparation</li>
+                                <li>Used hand and power tools safely to support vehicle repair operations</li>
+                                <li>Inspected vehicles and components for wear, damage, and required maintenance</li>
+                                <li>Maintained a clean, organized, and safe workshop environment</li>
+                                <li>Supported inventory management by organizing tools, equipment, and spare parts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="resume-column-title" style="margin-top: 50px;"><i class="fa-solid fa-circle-info"></i> Other Professional Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item" style="margin-bottom: 20px;">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Jan 2019 - Aug 2021</div>
+                            <h4 class="timeline-title">Compliance Deputy Director</h4>
+                            <div class="timeline-subtitle">Central Bank of Afghanistan, Kabul</div>
+                        </div>
+                        <div class="timeline-item" style="margin-bottom: 20px;">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Mar 2017 - Jan 2019</div>
+                            <h4 class="timeline-title">Legal Advisor</h4>
+                            <div class="timeline-subtitle">FinTRACA, Central Bank of Afghanistan</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Jan 2014 - Mar 2017</div>
+                            <h4 class="timeline-title">Internal Auditor</h4>
+                            <div class="timeline-subtitle">Comptroller General's Office, Kabul</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
         <div class="container contact-grid">
             <div class="contact-info">
-                <h2 class="contact-info-title">Contact Me</h2>
+                <h2 class="contact-info-title">Contact Info</h2>
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fa-solid fa-phone contact-icon"></i>
                         <div class="contact-text-wrapper">
                             <span class="contact-label">Phone</span>
-                            <span class="contact-value">+1 (403) 555-0123</span>
+                            <span class="contact-value"><a href="tel:8254325067" style="color: inherit; text-decoration: none;">+1 (825) 432-5067</a></span>
                         </div>
                     </div>
                     
@@ -1026,7 +1274,7 @@
                         <i class="fa-solid fa-envelope contact-icon"></i>
                         <div class="contact-text-wrapper">
                             <span class="contact-label">Email</span>
-                            <span class="contact-value">fawad.amiry.mechanic@gmail.com</span>
+                            <span class="contact-value"><a href="mailto:fawadahmad1392@gmail.com" style="color: inherit; text-decoration: none;">fawadahmad1392@gmail.com</a></span>
                         </div>
                     </div>
                     
@@ -1037,33 +1285,19 @@
                             <span class="contact-value">Calgary, Alberta, Canada</span>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <i class="fa-solid fa-clock contact-icon"></i>
-                        <div class="contact-text-wrapper">
-                            <span class="contact-label">Availability</span>
-                            <span class="contact-value">Mon - Fri: 7:00 AM - 5:00 PM</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <div class="message-form-wrapper">
-                <h2 class="message-form-title">Send Me A Message</h2>
-                <form class="message-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo layout.');">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email Address" required>
-                        </div>
-                    </div>
-                    <div class="form-group full-width">
-                        <textarea class="form-control" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
-                </form>
+            <div class="contact-info-container">
+                <h2 class="message-form-title">Let's Connect</h2>
+                <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 15px; line-height: 1.6;">
+                    I am actively seeking heavy-duty mechanic apprentice opportunities in Calgary, AB, and am ready to join your team. 
+                    Please reach out to me directly via email or phone. You can also view or download my complete resume below.
+                </p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="mailto:fawadahmad1392@gmail.com" class="btn"><i class="fa-solid fa-envelope" style="margin-left: 0; margin-right: 8px;"></i> Email Me</a>
+                    <a href="fawad_resume.pdf" download class="btn" style="background-color: transparent; border: 2px solid var(--accent-orange); color: var(--text-white);"><i class="fa-solid fa-download" style="margin-left: 0; margin-right: 8px;"></i> Download Resume</a>
+                </div>
             </div>
         </div>
     </section>
