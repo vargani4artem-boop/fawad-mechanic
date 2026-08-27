@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fawad Ahmad Khan Amiry - Heavy Duty Mechanic</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0c;
+            --bg-secondary: #111215;
+            --bg-card: #15171c;
+            --accent-orange: #ff6f00;
+            --accent-hover: #e56200;
+            --text-white: #ffffff;
+            --text-gray: #b0b3b8;
+            --text-dark: #18191c;
+            --border-color: #22252c;
+            --max-width: 1200px;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* Container helper */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        /* Button style */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-orange);
+            color: var(--text-white);
+            padding: 12px 28px;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            margin-left: 8px;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(4px);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(10, 10, 12, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-white);
+        }
+
+        .logo-icon {
+            color: var(--accent-orange);
+            font-size: 32px;
+            margin-right: 12px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 18px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .logo-subtitle {
+            font-family: var(--font-heading);
+            font-size: 9px;
+            color: var(--text-gray);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .nav-links li a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 15px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: var(--accent-orange);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 2px;
+            background-color: var(--accent-orange);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+            transform: scaleX(1);
+        }
+
+        .nav-btn {
+            padding: 8px 18px;
+            font-size: 12px;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: var(--text-white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            min-height: calc(100vh - 90px);
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(10,10,12,0.95) 40%, rgba(10,10,12,0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-intro {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .hero-name {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero-name span {
+            color: var(--accent-orange);
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .hero-bullets li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .hero-bullets li i {
+            color: var(--accent-orange);
+            margin-right: 12px;
+            font-size: 18px;
+            background-color: rgba(255, 111, 0, 0.1);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 111, 0, 0.3);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .hero-image-border {
+            border: 4px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 10px;
+            background-color: rgba(21, 23, 28, 0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            object-fit: cover;
+            /* Placeholder styles if image is not replaced yet */
+            aspect-ratio: 4 / 5;
+            background-color: var(--bg-card);
+        }
+
+        /* HIGHLIGHTS / QUICK CARDS */
+        .highlights {
+            background-color: var(--bg-secondary);
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .highlight-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--accent-orange);
+            padding: 25px 20px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: rgba(255, 111, 0, 0.5);
+        }
+
+        .highlight-icon {
+            color: var(--accent-orange);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-title {
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .highlight-desc {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* ABOUT ME SECTION */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-orange);
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-frame {
+            border: 2px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 10px;
+            background-color: var(--bg-card);
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 16 / 10;
+            background-color: var(--bg-card);
+        }
+
+        /* SPECIALIZATIONS SECTION */
+        .specs {
+            background-color: var(--bg-secondary);
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .specs-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .specs-line {
+            height: 2px;
+            width: 60px;
+            background-color: var(--accent-orange);
+            margin: 0 20px;
+        }
+
+        .specs-title {
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .specs-title span {
+            color: var(--accent-orange);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .spec-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px 15px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .spec-card:hover {
+            border-color: var(--accent-orange);
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .spec-icon {
+            font-size: 32px;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+        }
+
+        .spec-name {
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .spec-desc {
+            font-size: 11px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* WHY HIRE ME / QUOTE SECTION */
+        .why-hire {
+            padding: 100px 0;
+        }
+
+        .why-hire-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .why-hire-title {
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .why-hire-bullets {
+            list-style: none;
+        }
+
+        .why-hire-bullets li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .why-hire-bullets li i {
+            color: var(--accent-orange);
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background-color: var(--bg-card);
+            border: 2px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 50px 40px;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .quote-icon {
+            font-size: 48px;
+            color: var(--accent-orange);
+            margin-right: 25px;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        .quote-text {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1.4;
+            color: var(--text-white);
+            text-transform: uppercase;
+        }
+
+        /* CONTACT & MESSAGE SECTION */
+        .contact {
+            background-color: var(--bg-secondary);
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+        }
+
+        .contact-info-title, .message-form-title {
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            color: var(--accent-orange);
+            font-size: 22px;
+            margin-right: 20px;
+            margin-top: 5px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .contact-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        /* Message Form */
+        .message-form {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-white);
+            padding: 14px 18px;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-orange);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--bg-primary);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo-icon {
+            font-size: 24px;
+        }
+
+        .footer-logo .logo-title {
+            font-size: 15px;
+        }
+
+        .footer-logo .logo-subtitle {
+            font-size: 8px;
+        }
+
+        .copyright {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 1024px) {
+            .highlights-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .specs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .hero-name {
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-secondary);
+                border-bottom: 1px solid var(--border-color);
+                padding: 20px;
+                margin-right: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .nav-links li a::after {
+                display: none;
+            }
+
+            .nav-container .btn {
+                display: none; /* Hide Header Action Button on mobile */
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-bullets li {
+                justify-content: center;
+            }
+
+            .hero-image {
+                max-width: 320px;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-hire-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-name {
+                font-size: 42px;
+            }
+            .hero-title {
+                font-size: 20px;
+            }
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            .message-form {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-gears logo-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-title">Heavy Duty Mechanic</span>
+                    <span class="logo-subtitle">Built to keep you moving</span>
+                </div>
+            </a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#specializations">Specializations</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#why-hire">Why Hire Me</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            
+            <a href="#contact" class="btn nav-btn">Get In Touch</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="hero-intro">HI, I'M</p>
+                <h1 class="hero-name">FAWAD <br><span>AHMAD KHAN AMIRY</span></h1>
+                <p class="hero-title">Heavy Duty Mechanic</p>
+                <p class="hero-desc">
+                    I work in Canada and I'm ready to be a valuable asset to your company. 
+                    Providing high-quality diagnostic and repair services for heavy-duty machinery, trucks, and equipment.
+                </p>
+                <ul class="hero-bullets">
+                    <li><i class="fa-solid fa-check"></i> 1st year apprenticeship completed</li>
+                    <li><i class="fa-solid fa-check"></i> Hands-on experience</li>
+                    <li><i class="fa-solid fa-check"></i> Reliable, responsible and result-driven</li>
+                    <li><i class="fa-solid fa-check"></i> Always learning, always improving</li>
+                </ul>
+                <a href="#contact" class="btn">Let's Work Together <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <div class="hero-image-border">
+                    <!-- 
+                      NOTE TO ARTEM: Replace the src below with the actual photo of Fawad: 
+                      e.g., src="fawad_hero.png"
+                    -->
+                    <img class="hero-image" src="fawad_hero.png" alt="Fawad Ahmad Khan Amiry">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK HIGHLIGHTS / CARD BAR -->
+    <section class="highlights" id="experience">
+        <div class="container highlights-grid">
+            <div class="highlight-card">
+                <i class="fa-solid fa-screwdriver-wrench highlight-icon"></i>
+                <h3 class="highlight-title">Experienced</h3>
+                <p class="highlight-desc">Hands-on experience working on heavy duty trucks and trailers.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fa-solid fa-graduation-cap highlight-icon"></i>
+                <h3 class="highlight-title">Trained</h3>
+                <p class="highlight-desc">Successfully completed 1st year of Heavy Duty Mechanic apprenticeship.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fa-solid fa-shield-halved highlight-icon"></i>
+                <h3 class="highlight-title">Reliable</h3>
+                <p class="highlight-desc">Strong work ethic with attention to detail and safety.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fa-solid fa-truck-moving highlight-icon"></i>
+                <h3 class="highlight-title">Ready to work</h3>
+                <p class="highlight-desc">Looking for an opportunity to grow and contribute with your team.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fa-solid fa-users-gear highlight-icon"></i>
+                <h3 class="highlight-title">Team Player</h3>
+                <p class="highlight-desc">Positive attitude, great communication and teamwork.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p>My name is Fawad Ahmad Khan Amiry. I'm a Heavy Duty Mechanic based in Canada and passionate about what I do every day.</p>
+                <p>I completed the first year of my apprenticeship and gained valuable knowledge and practical skills in diagnosing, repairing and maintaining heavy duty trucks and equipment.</p>
+                <p>I take pride in doing the job right the first time and always follow safety and quality standards.</p>
+                <p>I'm looking for a company where I can bring value, keep learning and become a strong part of the team.</p>
+            </div>
+            
+            <div class="about-image-wrapper">
+                <div class="about-image-frame">
+                    <!-- 
+                      NOTE TO ARTEM: Replace the src below with the workshop/action photo of Fawad: 
+                      e.g., src="fawad_about.png"
+                    -->
+                    <img class="about-image" src="fawad_about.png" alt="Fawad Ahmad Khan Amiry at work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALIZATIONS SECTION -->
+    <section class="specs" id="specializations">
+        <div class="container">
+            <div class="specs-header">
+                <div class="specs-line"></div>
+                <h2 class="specs-title">My <span>Specializations</span></h2>
+                <div class="specs-line"></div>
+            </div>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <i class="fa-solid fa-car-battery spec-icon"></i>
+                    <h3 class="spec-name">Diagnostics</h3>
+                    <p class="spec-desc">Advanced diagnostics and troubleshooting for engines, electrical and brake systems.</p>
+                </div>
+                
+                <div class="spec-card">
+                    <i class="fa-solid fa-wrench spec-icon"></i>
+                    <h3 class="spec-name">Repairs</h3>
+                    <p class="spec-desc">Engine, transmission, suspension, steering and drivetrain repairs.</p>
+                </div>
+                
+                <div class="spec-card">
+                    <i class="fa-solid fa-gears spec-icon"></i>
+                    <h3 class="spec-name">Maintenance</h3>
+                    <p class="spec-desc">Scheduled maintenance, oil changes, filters, inspections and preventative care.</p>
+                </div>
+                
+                <div class="spec-card">
+                    <i class="fa-solid fa-circle-check spec-icon"></i>
+                    <h3 class="spec-name">Safety</h3>
+                    <p class="spec-desc">Following safety procedures and ensuring equipment is road-ready and reliable.</p>
+                </div>
+                
+                <div class="spec-card">
+                    <i class="fa-solid fa-truck-monster spec-icon"></i>
+                    <h3 class="spec-name">Heavy Equipment</h3>
+                    <p class="spec-desc">Experience working on trucks, trailers and heavy-duty equipment of all sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY HIRE ME SECTION -->
+    <section class="why-hire" id="why-hire">
+        <div class="container why-hire-grid">
+            <div class="why-hire-content">
+                <h2 class="why-hire-title">Why Hire Me?</h2>
+                <ul class="why-hire-bullets">
+                    <li><i class="fa-solid fa-circle-check"></i> Motivated and quick learner</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Strong problem-solving skills</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Detail-oriented and organized</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Committed to quality and safety</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Ready to take on new challenges</li>
+                </ul>
+            </div>
+            
+            <div class="quote-box">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="quote-text">
+                    I am committed to delivering quality work, learning every day and helping your company succeed.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2 class="contact-info-title">Contact Me</h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone contact-icon"></i>
+                        <div class="contact-text-wrapper">
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+1 (403) 555-0123</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <div class="contact-text-wrapper">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">fawad.amiry.mechanic@gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        <div class="contact-text-wrapper">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Calgary, Alberta, Canada</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fa-solid fa-clock contact-icon"></i>
+                        <div class="contact-text-wrapper">
+                            <span class="contact-label">Availability</span>
+                            <span class="contact-value">Mon - Fri: 7:00 AM - 5:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="message-form-wrapper">
+                <h2 class="message-form-title">Send Me A Message</h2>
+                <form class="message-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo layout.');">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea class="form-control" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo footer-logo">
+                <i class="fa-solid fa-gears logo-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-title">Heavy Duty Mechanic</span>
+                    <span class="logo-subtitle">Built to keep you moving</span>
+                </div>
+            </a>
+            <p class="copyright">&copy; 2026 Fawad Ahmad Khan Amiry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toggle menu script -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
